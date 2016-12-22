@@ -26,6 +26,22 @@ sap.ui.define([
 			} else {
 				this._oRouter.navTo("master");
 			}
+		},
+
+		/* ======================================================= */
+		/* formatters*/
+		/* ======================================================= */
+		/**
+		 * Formatsagivenstringtouppercase.
+		 *
+		 * @function
+		 * @param{string}sNamestringtobeformatted
+		 * @public
+		 */
+	
+	 	toUpperCase: function(sName) {
+			return sName && sName.toUpperCase();
 		}
+
 	});
 });
