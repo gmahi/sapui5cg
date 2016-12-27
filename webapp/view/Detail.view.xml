@@ -3,11 +3,11 @@
 		<content>
 			<ObjectHeader title="{path: 'Name', formatter: '.formatter.toUpperCase'}" number="ID: {ID}">
 				<attributes>
-					<ObjectAttribute text="{Address/Country}"></ObjectAttribute>
+					<ObjectAttribute text="{Address/City}, {Address/Country}"></ObjectAttribute>
 					<ObjectAttribute text="{ path: 'Address/PhoneNumber', type: '.types.PhoneNumber' }"/>
 				</attributes>
 			</ObjectHeader>
-			<Table id="table" width="auto" class="sapUiResponsiveMargin" items="{Products}" noDataText="No Data" growing="true"
+			<Table id="table" width="auto" class="sapUiResponsiveMargin"  noDataText="No Data" growing="true"
 				growingScrollToLoad="true">
 				<headerToolbar>
 					<Toolbar>
@@ -25,20 +25,23 @@
 							<Text text="Name:" id="nameColumnTitle"/>
 						</header>
 					</Column>
-					<Column id="priceColumn">
+					<Column id="priceColumn" hAlign="Right">
 						<header>
-							<Text text="Price:" id="priceColumnTitle"/>
+							<Text text="Price:" id="priceColumnTitle" />
 						</header>
 					</Column>
 				</columns>
-				<items></items>
-				<ColumnListItem>
-					<cells>
-						<ObjectIdentifier text="{ID}"/>
-						<ObjectIdentifier text="{Name}"/>
-						<ObjectIdentifier text="{Price}" unit="USD"/>
-					</cells>
-				</ColumnListItem>
+				<!--<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier text="{ID}"/>
+							<ObjectIdentifier text="{Name}"/>
+							<ObjectIdentifier text="{Price}" unit="USD"/>
+						</cells>
+					</ColumnListItem>
+				</items>-->
+				
+				
 			</Table>
 		</content>
 	</Page>
