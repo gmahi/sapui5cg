@@ -20,7 +20,7 @@ sap.ui.define([
 				"/Suppliers/" + oEvent.getParameter("arguments").ID;
 			var oView = this.getView();
 			oView.bindElement(sObjectPath);
-			this._createProductsAggregation();
+			// this._createProductsAggregation();
 		},
 
 		/**
@@ -29,7 +29,7 @@ sap.ui.define([
 		 * @function
 		 * @private
 		 */
-		_createProductsAggregation: function() {
+	/*	_createProductsAggregation: function() {
 			var oTable = this.getView().byId("table");
 
 			oTable.bindAggregation("items", "Products", function(sId, oContext) {
@@ -66,7 +66,7 @@ sap.ui.define([
 				}));
 				return oColumnListItem;
 			});
-		},
+		},*/
 
 		onNavPress: function() {
 			var oHistory = History.getInstance();

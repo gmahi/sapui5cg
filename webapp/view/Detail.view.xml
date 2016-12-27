@@ -1,4 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sapui5.demo.mvcapp.controller.Detail">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sapui5.demo.mvcapp.controller.Detail" xmlns:layout="sap.ui.layout">
 	<Page showNavButton="true" navButtonPress="onNavPress" title="SupplierOverview">
 		<content>
 			<ObjectHeader title="{path: 'Name', formatter: '.formatter.toUpperCase'}" number="ID: {ID}">
@@ -7,8 +7,8 @@
 					<ObjectAttribute text="{ path: 'Address/PhoneNumber', type: '.types.PhoneNumber' }"/>
 				</attributes>
 			</ObjectHeader>
-			<Table id="table" width="auto" class="sapUiResponsiveMargin"  noDataText="No Data" growing="true"
-				growingScrollToLoad="true">
+			<Table id="table" width="auto" class="sapUiResponsiveMargin" noDataText="No Data" growing="true" growingScrollToLoad="true"
+			items="{Products}">
 				<headerToolbar>
 					<Toolbar>
 						<Title id="tableHeader" text="Suppliers Products"/>
@@ -27,21 +27,22 @@
 					</Column>
 					<Column id="priceColumn" hAlign="Right">
 						<header>
-							<Text text="Price:" id="priceColumnTitle" />
+							<Text text="Price:" id="priceColumnTitle"/>
 						</header>
 					</Column>
 				</columns>
-				<!--<items>
+				<items>
 					<ColumnListItem>
 						<cells>
 							<ObjectIdentifier text="{ID}"/>
-							<ObjectIdentifier text="{Name}"/>
+							<layout:VerticalLayout>
+								<Text text="{Name}"/>
+								<Text text="{Allergenics}" visible="{= ${Allergenics} !== ''}"/>
+							</layout:VerticalLayout>
 							<ObjectIdentifier text="{Price}" unit="USD"/>
 						</cells>
 					</ColumnListItem>
-				</items>-->
-				
-				
+				</items>
 			</Table>
 		</content>
 	</Page>
