@@ -3,8 +3,8 @@
 		<subHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
-				<Button icon="sap-icon://slim-arrow-up" press="onPageUp" enabled="{viewModel>/buttonPrev}"/>
-				<Button icon="sap-icon://slim-arrow-down" press="onPageDown" enabled="{viewModel>/buttonNext}"/>
+				<Button icon="sap-icon://slim-arrow-up" press="onPageUp" enabled="{viewModel>/buttonPrev}" visible="{Device>/system/phone}"/>
+				<Button icon="sap-icon://slim-arrow-down" press="onPageDown" enabled="{viewModel>/buttonNext}" visible="{Device>/system/phone}"/>
 			</Toolbar>
 		</subHeader>
 		<content>
